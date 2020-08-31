@@ -2,10 +2,65 @@ html,
 body {
   width: 100%;
   height: 100%;
+  margin:0;
 }
 
-.hola{
-    width: 50px;
-    height: 10px;
-    background-color: blueviolet;
+.none{
+  display:none;
 }
+
+.main-view{
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/background-form.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+h1{
+  position: absolute;
+  top: 20%;
+  left: 18%;
+  font-family: 'Zilla Slab', serif;
+  color: rgb(243, 243, 201);
+  font-size: 100px;
+  text-align: center;
+  z-index: 2;
+}
+
+button{
+  background-color: gainsboro;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  font-family: 'Zilla Slab', serif;
+  color: rgb(124, 124, 113);
+  font-size: 18px;
+  text-align: center;
+  z-index: 2;
+  border-radius: 15px;
+  border-style: none;
+  padding: 5px;
+  border-bottom: 4px solid rgb(153, 153, 153);
+}
+
+button:hover{
+  background-color: rgb(255, 199, 255);
+  border-bottom: 1px solid rgb(153, 153, 153);
+
+}
+
+.form{
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 500px;
+  border:6px solid rgb(243, 243, 201);
+  z-index: 2;
+
+}
+
+

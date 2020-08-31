@@ -1,6 +1,6 @@
 
 let content= document.getElementById("content")
-content.innerHTML =Book
+const form = document.getElementById("form");
 
 let myLibrary = [];
 //constructor function
@@ -10,6 +10,11 @@ function Book( title, author, pages, status) {
     this.pages=pages,
     this.status=read
 }
+
+function appearForm() {
+    form.classList.remove("none");
+  }
+
 
 function addBookToLibrary() {
   // add stuff here
