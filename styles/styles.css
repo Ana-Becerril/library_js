@@ -80,10 +80,10 @@ outline-color: rgb(179, 179, 179) ;
 color: rgb(124, 124, 113);
 }
 
-.add-button{
+#add-button{
   background-color: gainsboro;
   position: absolute;
-  top: 80%;
+  top: 85%;
   left: 45%;
   font-family: 'Zilla Slab', serif;
   color: rgb(124, 124, 113);
@@ -95,5 +95,11 @@ color: rgb(124, 124, 113);
   padding: 5px;
   border-bottom: 4px solid rgb(153, 153, 153);
   outline:none;
+}
+
+#add-button:hover{
+  background-color: rgb(199, 255, 216);
+  border-bottom: 1px solid rgb(153, 153, 153);
+
 }
 
