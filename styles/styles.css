@@ -43,10 +43,11 @@ button{
   border-style: none;
   padding: 5px;
   border-bottom: 4px solid rgb(153, 153, 153);
+  outline:none;
 }
 
 button:hover{
-  background-color: rgb(255, 199, 255);
+  background-color: rgb(199, 255, 216);
   border-bottom: 1px solid rgb(153, 153, 153);
 
 }
@@ -60,7 +61,39 @@ button:hover{
   height: 500px;
   border:6px solid rgb(243, 243, 201);
   z-index: 2;
-
+  text-align: center;
+  font-family: 'Zilla Slab', serif;
+  color: rgb(243, 243, 201);
+  font-size: 40px;
+  align-items: center;
+  justify-content: center;
 }
 
+form > input{
+  border-radius: 10px;
+  font-family: 'Zilla Slab', serif;
+height: 30px;
+font-size: large;
+background-color: gainsboro;
+border:rgb(243, 243, 201) solid 2px;
+outline-color: rgb(179, 179, 179) ;
+color: rgb(124, 124, 113);
+}
+
+.add-button{
+  background-color: gainsboro;
+  position: absolute;
+  top: 80%;
+  left: 45%;
+  font-family: 'Zilla Slab', serif;
+  color: rgb(124, 124, 113);
+  font-size: 18px;
+  text-align: center;
+  z-index: 2;
+  border-radius: 15px;
+  border-style: none;
+  padding: 5px;
+  border-bottom: 4px solid rgb(153, 153, 153);
+  outline:none;
+}
 
