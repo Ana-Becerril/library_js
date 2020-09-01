@@ -80,11 +80,26 @@ outline-color: rgb(179, 179, 179) ;
 color: rgb(124, 124, 113);
 }
 
+.status{
+  width: 400px;
+  height: 60px;
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  top: 65%;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+}
+
 #add-button{
   background-color: gainsboro;
   position: absolute;
-  top: 85%;
-  left: 45%;
+  top: 80%;
+  left: 40%;
   font-family: 'Zilla Slab', serif;
   color: rgb(124, 124, 113);
   font-size: 18px;

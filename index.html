@@ -21,8 +21,15 @@
         <input type="text" id="author" name="author" value=""><br>
         <label for="pages">Pages:</label><br>
         <input type="number" id="pages" name="pages" value="0"><br>
-        <label for="status">Status:</label><br>
-        <input type="text" id="status" name="status" value="Read">
+        <div class="status">
+        <label for="statusRead">Read
+        <input type="radio" checked="checked" name="radio">
+        <span class="checkmark"></span>
+        </label>
+        <label for="statusUnread">Unread
+        <input type="radio" checked="checked" name="radio">
+        </label>
+        </div>
         <button id="add-button"> Add a book </button>
        </form>
     </div>
