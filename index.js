@@ -26,24 +26,19 @@ let newAuthor = document.getElementById("author");
 let newPages = document.getElementById("pages");
 let newStatus = document.getElementById("status");
 
-//funcion para tomar los datos del nuevo libro al presionar el botón "Add a book"
+//funcion para tomar los datos del nuevo libro al presionar el botón "Add a book" y llevarlos al library_store html
 function test (){
-   if(!bookBuilder(newTitle.value, newAuthor.value, newPages.value, statusChecker())) {
+   if(bookBuilder(newTitle.value, newAuthor.value, newPages.value, statusChecker())) {
     let addButton = document.getElementById("add-button");
-    alert("Pleasedlkfjafjalfjal")
-}else{
-    window.location="library_store.html"};
-   
+    window.location="library_store.html"};  
 }
 
 //función para checar si el libro está o no leído
 function statusChecker(){
 if (document.getElementById("read").checked) {
-    // Basic package is checked
     return true;
 
 } else if (document.getElementById("unread").checked) {
-    // Pro package is checked
     return false;
 
 }
