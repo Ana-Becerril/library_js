@@ -1,6 +1,8 @@
 
 const form = document.getElementById("form");
 
+let newBook;
+
 let myLibrary = [];
 //función del constructor y marcación de error para cuando no hay input
 function Book( title, author, pages, status) {
@@ -28,9 +30,8 @@ let newStatus = document.getElementById("status");
 
 //funcion para tomar los datos del nuevo libro al presionar el botón "Add a book" y llevarlos al library_store html
 function test (){
-   if(bookBuilder(newTitle.value, newAuthor.value, newPages.value, statusChecker())) {
-    let addButton = document.getElementById("add-button");
-    window.location="library_store.html"};  
+   bookBuilder(newTitle.value, newAuthor.value, newPages.value, statusChecker());
+ 
 }
 
 //función para checar si el libro está o no leído
@@ -47,7 +48,14 @@ if (document.getElementById("read").checked) {
 
 //función para construir el nuevo libro
 function bookBuilder(title, author, pages, status){
-    let newBook= new Book(title, author, pages, statusChecker(status));
+    newBook= new Book(title, author, pages, statusChecker(status));
     console.log(newBook);
-    return true;
+        return true;
 }
+
+console.log(myLibrary)
+//DOM para observar el nuevo libro en library_store
+document.getElementById("newTitle").innerHTML=newBook.title;
+document.getElementById("newAuthor").innerHTML=newBook.author;
+
+

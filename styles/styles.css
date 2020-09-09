@@ -20,11 +20,11 @@ body {
 
 h1{
   position: absolute;
-  top: 20%;
-  left: 18%;
+  bottom: 72%;
+  left: 36%;
   font-family: 'Zilla Slab', serif;
   color: rgb(243, 243, 201);
-  font-size: 100px;
+  font-size: 90px;
   text-align: center;
   z-index: 2;
 }
@@ -32,8 +32,8 @@ h1{
 button{
   background-color: gainsboro;
   position: absolute;
-  top: 50%;
-  left: 45%;
+  bottom: 76%;
+  left: 47%;
   font-family: 'Zilla Slab', serif;
   color: rgb(124, 124, 113);
   font-size: 18px;
@@ -54,25 +54,26 @@ button:hover{
 
 .form{
   position: absolute;
-  top: 50%;
-  left: 75%;
+  top: 58%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
-  height: 500px;
-  border:6px solid rgb(243, 243, 201);
+  width: 301px;
+  height: 337px;
+  border: 3px solid rgb(243, 243, 201);
   z-index: 2;
   text-align: center;
   font-family: 'Zilla Slab', serif;
   color: rgb(243, 243, 201);
-  font-size: 40px;
+  font-size: 28px;
   align-items: center;
   justify-content: center;
+  background-color: rgb(199, 195, 204, 0.9)
 }
 
 form > input{
   border-radius: 10px;
   font-family: 'Zilla Slab', serif;
-height: 30px;
+height: 25px;
 font-size: large;
 background-color: gainsboro;
 border:rgb(243, 243, 201) solid 2px;
@@ -81,13 +82,13 @@ color: rgb(124, 124, 113);
 }
 
 .status{
-  width: 400px;
-  height: 60px;
-  position: absolute;
-  display: flex;
-  justify-content: space-evenly;
-  top: 65%;
-  cursor: pointer;
+  width: 305px;
+    height: 60px;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    left: 1%;
+    top: 66%;
 }
 
 input[type="radio"] {
@@ -97,19 +98,18 @@ input[type="radio"] {
 
 #add-button{
   background-color: gainsboro;
-  position: absolute;
-  top: 80%;
-  left: 40%;
-  font-family: 'Zilla Slab', serif;
-  color: rgb(124, 124, 113);
-  font-size: 18px;
-  text-align: center;
-  z-index: 2;
-  border-radius: 15px;
-  border-style: none;
-  padding: 5px;
-  border-bottom: 4px solid rgb(153, 153, 153);
-  outline:none;
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    font-family: 'Zilla Slab', serif;
+    color: rgb(124, 124, 113);
+    font-size: 20px;
+    text-align: center;
+    z-index: 2;
+    border-radius: 45px;
+    border-style: none;
+    padding: 14px;
+    border-bottom: 4px solid rgb(153, 153, 153);
 }
 
 #add-button:hover{
@@ -119,4 +119,14 @@ input[type="radio"] {
 
 
 }
+
+/*Aquí empieza la estilización de library_store*/
+
+.card{
+  background-color: blueviolet;
+  width: 200px;
+  height: 200px;
+}
+
+
 
