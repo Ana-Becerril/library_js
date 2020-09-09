@@ -115,6 +115,8 @@ input[type="radio"] {
 #add-button:hover{
   background-color: rgb(199, 255, 216);
   border-bottom: 1px solid rgb(153, 153, 153);
+  color: rgb(124, 124, 113);
+
 
 }
 
