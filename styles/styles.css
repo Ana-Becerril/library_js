@@ -52,23 +52,68 @@ button:hover{
 
 }
 
-.form{
-  position: absolute;
-  top: 58%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 301px;
-  height: 337px;
-  border: 3px solid rgb(243, 243, 201);
-  z-index: 2;
-  text-align: center;
-  font-family: 'Zilla Slab', serif;
-  color: rgb(243, 243, 201);
-  font-size: 28px;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(199, 195, 204, 0.9)
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
 }
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+    bottom: 0;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+    margin-top: 50px;
+    top: 54%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    width: 355px;
+    height: 391px;
+    border: 3px solid rgb(243, 243, 201);
+    z-index: 1;
+    text-align: center;
+    font-family: 'Zilla Slab', serif;
+    color: rgb(243, 243, 201);
+    font-size: 28px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(199, 195, 204, 0.6)
+}
+
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
 
 form > input{
   border-radius: 10px;
@@ -79,6 +124,7 @@ background-color: gainsboro;
 border:rgb(243, 243, 201) solid 2px;
 outline-color: rgb(179, 179, 179) ;
 color: rgb(124, 124, 113);
+z-index: 3;
 }
 
 .status{
@@ -99,8 +145,8 @@ input[type="radio"] {
 #add-button{
   background-color: gainsboro;
     position: absolute;
-    top: 80%;
-    left: 40%;
+    bottom: 7%;
+    left: 33%;
     font-family: 'Zilla Slab', serif;
     color: rgb(124, 124, 113);
     font-size: 20px;
@@ -108,7 +154,7 @@ input[type="radio"] {
     z-index: 2;
     border-radius: 45px;
     border-style: none;
-    padding: 14px;
+    padding: 7px;
     border-bottom: 4px solid rgb(153, 153, 153);
 }
 
