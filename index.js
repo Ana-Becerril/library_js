@@ -48,15 +48,13 @@ if (document.getElementById("read").checked) {
 
 //función para construir el nuevo libro
 function bookBuilder(title, author, pages, status){
-    newBook= new Book(title, author, pages, statusChecker(status));
-    console.log(newBook);
-        return true;
+    if(newBook= new Book(title, author, pages, statusChecker(status))){
+      console.log(newBook);
+      myLibrary.push(newBook);
+          return true;
+    };
 }
-
 console.log(myLibrary)
-//DOM para observar el nuevo libro en library_store
-//document.getElementById("newTitle").innerHTML=newBook.title;
-//document.getElementById("newAuthor").innerHTML=newBook.author;
 
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -64,6 +62,7 @@ const modalContent = document.getElementById("modalContent")
 
 // Get the button that opens the modal
 var btn = document.getElementById("button");
+var btnAdd=document.getElementById("add-button")
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -76,9 +75,9 @@ btn.onclick = function() {
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+//btnAdd.onclick = function() {
+ // modal.style.display = "none";
+//}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -86,4 +85,6 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+var card=document.getElementById("card").innerHTML=Book.title
 
