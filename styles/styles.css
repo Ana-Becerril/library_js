@@ -213,30 +213,6 @@ button:hover{
     background-color: rgb(199, 195, 204, 0.6)
 }
 
-
-/*
-@-webkit-keyframes slideIn {
-  from {bottom: -300px; opacity: 0} 
-  to {bottom: 0; opacity: 1}
-}
-
-
-@keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
-}
-
-@-webkit-keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
-
-@keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-} */
-
-
 form > input{
   border-radius: 10px;
   font-family: 'Zilla Slab', serif;
@@ -268,7 +244,7 @@ input[type="radio"] {
   background-color: gainsboro;
     position: absolute;
     bottom: 7%;
-    left: 33%;
+    left: 44%;
     font-family: 'Zilla Slab', serif;
     color: rgb(124, 124, 113);
     font-size: 20px;
