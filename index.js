@@ -22,16 +22,17 @@ function appearForm() {
     form.classList.remove("none");
   }
 
-//variables que guardan la información del nuevo objeto libro (los campos a llenar en el formulario)
+//variables que hacen referencia a la información del nuevo objeto libro (los campos a llenar en el formulario)
 let newTitle = document.getElementById("title");
 let newAuthor = document.getElementById("author");
 let newPages = document.getElementById("pages");
 let newStatus = document.getElementById("status");
 
-//funcion para tomar los datos del nuevo libro al presionar el botón "Add a book" y llevarlos al library_store html
+//funcion que construye un libro a partir de los valores proporcionados, desaparece el formulario e imprime los nuevos valores en una tarjeta
 function test (){
    bookBuilder(newTitle.value, newAuthor.value, newPages.value, statusChecker());
- 
+   modal.style.display = "none";
+   printValues();
 }
 
 //función para checar si el libro está o no leído
@@ -74,11 +75,6 @@ btn.onclick = function() {
   
 }
 
-// When the user clicks on <span> (x), close the modal
-//btnAdd.onclick = function() {
- // modal.style.display = "none";
-//}
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
@@ -86,5 +82,10 @@ window.onclick = function(event) {
   }
 }
 
-var card=document.getElementById("card").innerHTML=Book.title
+
+function printValues(){
+var card=document.getElementById("card").innerHTML=newBook.title+newBook.author;
+
+};
+
 
