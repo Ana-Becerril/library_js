@@ -38,10 +38,10 @@ function test (){
 //función para checar si el libro está o no leído
 function statusChecker(){
 if (document.getElementById("read").checked) {
-    return true;
+    return "read";
 
 } else if (document.getElementById("unread").checked) {
-    return false;
+    return "unread";
 
 }
 };
@@ -84,8 +84,24 @@ window.onclick = function(event) {
 
 
 function printValues(){
-var card=document.getElementById("card").innerHTML=newBook.title+newBook.author;
-
+  const cardContainer=document.querySelector("#card");
+  const title=document.createElement("div")
+  title.innerHTML=newBook.title;
+  title.classList.add("title");
+  cardContainer.appendChild(title);
+  const author=document.createElement("div");
+  author.innerHTML=newBook.author;
+  author.classList.add("author");
+  cardContainer.appendChild(author);
+  const pages=document.createElement("div")
+  pages.innerHTML=newBook.pages;
+  pages.classList.add("pages");
+  cardContainer.appendChild(pages);
+  const status=document.createElement("div")
+  status.innerHTML=newBook.status;
+  status.classList.add("status");
+  cardContainer.appendChild(status);  
 };
+
 
 
