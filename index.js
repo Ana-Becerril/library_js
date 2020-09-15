@@ -87,21 +87,25 @@ function printValues(){
   const cardContainer=document.querySelector("#card");
   const title=document.createElement("div")
   title.innerHTML=newBook.title;
-  title.classList.add("title");
+  title.classList.add("new-title");
   cardContainer.appendChild(title);
   const author=document.createElement("div");
   author.innerHTML=newBook.author;
-  author.classList.add("author");
+  author.classList.add("new-author");
   cardContainer.appendChild(author);
   const pages=document.createElement("div")
   pages.innerHTML=newBook.pages;
-  pages.classList.add("pages");
+  pages.classList.add("new-pages");
   cardContainer.appendChild(pages);
-  const status=document.createElement("div")
+  const status=document.createElement("radio")
   status.innerHTML=newBook.status;
-  status.classList.add("status");
+  status.classList.add("new-status");
   cardContainer.appendChild(status);  
 };
+
+function resetForm(){
+  
+}
 
 
 
