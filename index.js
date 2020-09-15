@@ -33,6 +33,10 @@ function test (){
    bookBuilder(newTitle.value, newAuthor.value, newPages.value, statusChecker());
    modal.style.display = "none";
    printValues();
+   title.value="";
+   author.value="";
+   pages.value="";
+   status.value="";
 }
 
 //función para checar si el libro está o no leído
@@ -83,6 +87,8 @@ window.onclick = function(event) {
 }
 
 
+//Función para imprimir los nuevos valores en una "card"
+
 function printValues(){
   const cardContainer=document.querySelector("#card");
   const title=document.createElement("div")
@@ -97,15 +103,11 @@ function printValues(){
   pages.innerHTML=newBook.pages;
   pages.classList.add("new-pages");
   cardContainer.appendChild(pages);
-  const status=document.createElement("radio")
+  const status=document.createElement("button")
   status.innerHTML=newBook.status;
   status.classList.add("new-status");
   cardContainer.appendChild(status);  
 };
-
-function resetForm(){
-  
-}
 
 
 

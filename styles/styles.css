@@ -265,7 +265,7 @@ input[type="radio"] {
 .card{
   display: flex;
   background-color:  rgba(233, 233, 183, 0.3);
-  border: 5px dotted rgb(243, 243, 201);
+  border: 6px dotted rgb(243, 243, 201);
   width: 200px;
   height: 200px;
   z-index: 1;
