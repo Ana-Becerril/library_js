@@ -4,6 +4,8 @@ const form = document.getElementById("form");
 let newBook;
 
 let myLibrary = [];
+
+const cardContainer= document.getElementById("card")
 //función del constructor y marcación de error para cuando no hay input
 function Book( title, author, pages, status) {
     this.title=title;
@@ -32,20 +34,51 @@ let newStatus = document.getElementById("status");
 function test (){
    bookBuilder(newTitle.value, newAuthor.value, newPages.value, statusChecker());
    modal.style.display = "none";
-   printValues();
+   //estos valores regresan los valores del formulario en blando cuando ya fue enviado
    title.value="";
    author.value="";
    pages.value="";
    status.value="";
-}
+
+   //Loop para agregar una tarjeta por cada libro creado
+
+   myLibrary.forEach(function (book) {
+    var bookDiv = document.createElement('div');
+  bookDiv.classList.add("bookDiv");
+    var mainContainer=document.getElementById("libraryStore");
+  const title=document.createElement("div")
+  title.innerHTML=book.title;
+  title.classList.add("new-title");
+  bookDiv.appendChild(title);
+  const author=document.createElement("div");
+  author.innerHTML=book.author;
+  author.classList.add("new-author");
+  bookDiv.appendChild(author);
+  const pages=document.createElement("div")
+  pages.innerHTML=book.pages;
+  pages.classList.add("new-pages");
+  bookDiv.appendChild(pages);
+  const status=document.createElement("div")
+  status.innerHTML=book.status;
+  status.classList.add("new-status");
+  bookDiv.appendChild(status);  
+  const deleteButton=document.createElement("div")
+  deleteButton.classList.add("delete-button");
+  bookDiv.appendChild(deleteButton);  
+ const changeStatus=document.createElement("div");
+ changeStatus.classList.add("change-status-button");
+ bookDiv.appendChild(changeStatus);
+    mainContainer.appendChild(bookDiv);
+  });
+  }
 
 //función para checar si el libro está o no leído
 function statusChecker(){
 if (document.getElementById("read").checked) {
-    return "read";
+    return "Read";
 
 } else if (document.getElementById("unread").checked) {
-    return "unread";
+    return "Unread";
 
 }
 };
@@ -69,9 +102,6 @@ const modalContent = document.getElementById("modalContent")
 var btn = document.getElementById("button");
 var btnAdd=document.getElementById("add-button")
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "flex";
@@ -87,27 +117,11 @@ window.onclick = function(event) {
 }
 
 
-//Función para imprimir los nuevos valores en una "card"
 
-function printValues(){
-  const cardContainer=document.querySelector("#card");
-  const title=document.createElement("div")
-  title.innerHTML=newBook.title;
-  title.classList.add("new-title");
-  cardContainer.appendChild(title);
-  const author=document.createElement("div");
-  author.innerHTML=newBook.author;
-  author.classList.add("new-author");
-  cardContainer.appendChild(author);
-  const pages=document.createElement("div")
-  pages.innerHTML=newBook.pages;
-  pages.classList.add("new-pages");
-  cardContainer.appendChild(pages);
-  const status=document.createElement("button")
-  status.innerHTML=newBook.status;
-  status.classList.add("new-status");
-  cardContainer.appendChild(status);  
-};
+
+
+
+
 
 
 
