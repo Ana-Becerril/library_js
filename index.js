@@ -4,8 +4,8 @@ const form = document.getElementById("form");
 let newBook;
 
 let myLibrary = [];
+const mainContainer = document.getElementById("libraryStore")
 
-const cardContainer= document.getElementById("card")
 //función del constructor y marcación de error para cuando no hay input
 function Book( title, author, pages, status) {
     this.title=title;
@@ -34,6 +34,7 @@ let newStatus = document.getElementById("status");
 function test (){
    bookBuilder(newTitle.value, newAuthor.value, newPages.value, statusChecker());
    modal.style.display = "none";
+   //printValues();
    //estos valores regresan los valores del formulario en blando cuando ya fue enviado
    title.value="";
    author.value="";
@@ -42,34 +43,10 @@ function test (){
 
    //Loop para agregar una tarjeta por cada libro creado
 
-   myLibrary.forEach(function (book) {
-    var bookDiv = document.createElement('div');
-  bookDiv.classList.add("bookDiv");
-    var mainContainer=document.getElementById("libraryStore");
-  const title=document.createElement("div")
-  title.innerHTML=book.title;
-  title.classList.add("new-title");
-  bookDiv.appendChild(title);
-  const author=document.createElement("div");
-  author.innerHTML=book.author;
-  author.classList.add("new-author");
-  bookDiv.appendChild(author);
-  const pages=document.createElement("div")
-  pages.innerHTML=book.pages;
-  pages.classList.add("new-pages");
-  bookDiv.appendChild(pages);
-  const status=document.createElement("div")
-  status.innerHTML=book.status;
-  status.classList.add("new-status");
-  bookDiv.appendChild(status);  
-  const deleteButton=document.createElement("div")
-  deleteButton.classList.add("delete-button");
-  bookDiv.appendChild(deleteButton);  
- const changeStatus=document.createElement("div");
- changeStatus.classList.add("change-status-button");
- bookDiv.appendChild(changeStatus);
-    mainContainer.appendChild(bookDiv);
-  });
+   for (let i = 0; i < myLibrary.length; i++) {
+    mainContainer.appendChild(printValues(myLibrary,i));
+    console.log(myLibrary[i]);
+    }
   }
 
 //función para checar si el libro está o no leído
@@ -117,7 +94,35 @@ window.onclick = function(event) {
 }
 
 
+//Función para imprimir los nuevos valores en una "card"
 
+function printValues(array,i){
+  const cardContainer=document.createElement("div")
+  cardContainer.classList.add("bookDiv");
+  const title=document.createElement("div")
+  title.innerHTML=array[i].title;
+  title.classList.add("new-title");
+  cardContainer.appendChild(title);
+  const author=document.createElement("div");
+  author.innerHTML=array[i].author;
+  author.classList.add("new-author");
+  cardContainer.appendChild(author);
+  const pages=document.createElement("div")
+  pages.innerHTML=array[i].pages;
+  pages.classList.add("new-pages");
+  cardContainer.appendChild(pages);
+  const status=document.createElement("div")
+  status.innerHTML=array[i].status;
+  status.classList.add("new-status");
+  cardContainer.appendChild(status);  
+  const deleteButton=document.createElement("div")
+  deleteButton.classList.add("delete-button");
+  cardContainer.appendChild(deleteButton);  
+ const changeStatus=document.createElement("div");
+ changeStatus.classList.add("change-status-button");
+ cardContainer.appendChild(changeStatus);
+return cardContainer;
+};
 
 
 
