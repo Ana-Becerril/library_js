@@ -34,7 +34,7 @@ let newStatus = document.getElementById("status");
 function test (){
    bookBuilder(newTitle.value, newAuthor.value, newPages.value, statusChecker());
    modal.style.display = "none";
-   //printValues();
+   myLibrary.push(newBook);
    //estos valores regresan los valores del formulario en blando cuando ya fue enviado
    title.value="";
    author.value="";
@@ -42,12 +42,13 @@ function test (){
    status.value="";
 
    //Loop para agregar una tarjeta por cada libro creado
-
-   for (let i = 0; i < myLibrary.length; i++) {
+   mainContainer.innerHTML="";
+   for (let i = 0; i<myLibrary.length; i++) {
     mainContainer.appendChild(printValues(myLibrary,i));
-    console.log(myLibrary[i]);
     }
+    console.log(myLibrary[0]);
   }
+
 
 //función para checar si el libro está o no leído
 function statusChecker(){
@@ -64,8 +65,6 @@ if (document.getElementById("read").checked) {
 //función para construir el nuevo libro
 function bookBuilder(title, author, pages, status){
     if(newBook= new Book(title, author, pages, statusChecker(status))){
-      console.log(newBook);
-      myLibrary.push(newBook);
           return true;
     };
 }
