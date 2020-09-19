@@ -119,9 +119,6 @@ function printValues(array,i){
   status.innerHTML=array[i].status;
   status.classList.add("new-status");
   cardContainer.appendChild(status);  
- const changeStatus=document.createElement("div");
- changeStatus.classList.add("change-status-button");
- cardContainer.appendChild(changeStatus);
 return cardContainer;
 };
 
