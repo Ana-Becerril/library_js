@@ -98,6 +98,11 @@ window.onclick = function(event) {
 function printValues(array,i){
   const cardContainer=document.createElement("div")
   cardContainer.classList.add("bookDiv");
+  const deleteButton=document.createElement("div")
+  deleteButton.classList.add("delete-button");
+  deleteButton.textContent="x"
+  deleteButton.classList.add("deleteBtn")
+  cardContainer.appendChild(deleteButton);   
   const title=document.createElement("div")
   title.innerHTML=array[i].title;
   title.classList.add("new-title");
@@ -114,14 +119,13 @@ function printValues(array,i){
   status.innerHTML=array[i].status;
   status.classList.add("new-status");
   cardContainer.appendChild(status);  
-  const deleteButton=document.createElement("div")
-  deleteButton.classList.add("delete-button");
-  cardContainer.appendChild(deleteButton);  
  const changeStatus=document.createElement("div");
  changeStatus.classList.add("change-status-button");
  cardContainer.appendChild(changeStatus);
 return cardContainer;
 };
+
+
 
 
 

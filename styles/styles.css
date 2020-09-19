@@ -269,11 +269,11 @@ input[type="radio"] {
 }
 
 .bookDiv{
+        position: relative;
   display: flex;
   background-color:  rgba(233, 233, 183, 0.3);
   border: 6px dotted rgb(243, 243, 201);
   width: 200px;
-  height: auto;
   z-index: 1;
   top:30%;
   margin: 0 10px 0 10px;
@@ -289,9 +289,33 @@ color:rgb(93, 93, 93);
 .new-title, .new-author, .new-pages{
  background-color: rgb(229, 186, 229);
  text-align: center;
+ margin-bottom: 5px;
+}
+
+.new-title{
+ margin-top: 30px;
 }
 
 .read{
 border: 1px solid rgb(93, 93, 93);
 }
+
+.deleteBtn{
+position: absolute;
+right: 7px;
+top: 0px;
+height: 28px;
+width: 30px;
+text-align: center;
+border-radius: 50%;
+background-color: gainsboro;
+border-bottom: 4px solid rgb(153, 153, 153);
+margin: 5px 0 3px 0;
+}
+
+.deleteBtn:hover{
+        background-color: rgb(243, 243, 201);
+        border-bottom: 1px solid rgb(153, 153, 153);
+        color: rgb(124, 124, 113); 
+      }
 
