@@ -87,8 +87,8 @@ btn.onclick = function() {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+if (event.target == modal) {
+  modal.style.display = "none";
   }
 }
 
@@ -97,11 +97,15 @@ window.onclick = function(event) {
 
 function printValues(array,i){
   const cardContainer=document.createElement("div")
+  cardContainer.dataset.id=`${i}`
   cardContainer.classList.add("bookDiv");
   const deleteButton=document.createElement("div")
-  deleteButton.classList.add("delete-button");
-  deleteButton.textContent="x"
+  const iconDeleteBtn=document.createElement("i");
+  iconDeleteBtn.classList.add("fas")
+  iconDeleteBtn.classList.add("fa-times")
   deleteButton.classList.add("deleteBtn")
+  deleteBook(cardContainer);
+  deleteButton.appendChild(iconDeleteBtn);
   cardContainer.appendChild(deleteButton);   
   const title=document.createElement("div")
   title.innerHTML=array[i].title;
@@ -122,11 +126,12 @@ function printValues(array,i){
 return cardContainer;
 };
 
-
-
-
-
-
-
-
-
+function deleteBook(container){
+var deleteButton = document.getElementsByClassName("deleteBtn");
+var i;
+for (i = 0; i < deleteButton.length; i++) {
+  deleteButton[i].addEventListener("click", function() {
+  container.style.display = 'none';
+});
+}
+};
