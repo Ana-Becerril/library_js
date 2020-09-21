@@ -104,7 +104,7 @@ function printValues(array,i){
   iconDeleteBtn.classList.add("fas")
   iconDeleteBtn.classList.add("fa-times")
   deleteButton.classList.add("deleteBtn")
-  deleteBook(cardContainer);
+  deleteButton.addEventListener("click", ()=>{deleteBook(cardContainer)})
   deleteButton.appendChild(iconDeleteBtn);
   cardContainer.appendChild(deleteButton);   
   const title=document.createElement("div")
@@ -127,11 +127,5 @@ return cardContainer;
 };
 
 function deleteBook(container){
-var deleteButton = document.getElementsByClassName("deleteBtn");
-var i;
-for (i = 0; i < deleteButton.length; i++) {
-  deleteButton[i].addEventListener("click", function() {
   container.style.display = 'none';
-});
-}
 };
