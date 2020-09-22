@@ -40,15 +40,17 @@ function test (){
    author.value="";
    pages.value="";
    status.value="";
-
+   render();
+}
    //Loop para agregar una tarjeta por cada libro creado
-   mainContainer.innerHTML="";
+
+  function render(){ mainContainer.innerHTML="";
    for (let i = 0; i<myLibrary.length; i++) {
     mainContainer.appendChild(printValues(myLibrary,i));
     }
     console.log(myLibrary[0]);
-  }
-
+  };
+  
 
 //función para checar si el libro está o no leído
 function statusChecker(){
@@ -127,5 +129,8 @@ return cardContainer;
 };
 
 function deleteBook(container){
-  container.style.display = 'none';
+  let index= container.dataset.id;
+  myLibrary.splice(index,1)
+  console.log(myLibrary)
+  render();
 };
