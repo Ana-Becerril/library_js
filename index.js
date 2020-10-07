@@ -55,9 +55,11 @@ function test (){
 //función para checar si el libro está o no leído
 function statusChecker(){
 if (document.getElementById("read").checked) {
+    status=true;
     return "Read";
 
 } else if (document.getElementById("unread").checked) {
+    status=false;
     return "Unread";
 
 }
@@ -99,14 +101,16 @@ if (event.target == modal) {
 
 function printValues(array,i){
   const cardContainer=document.createElement("div")
-  cardContainer.dataset.id=`${i}`
+  cardContainer.dataset.id==
   cardContainer.classList.add("bookDiv");
   const deleteButton=document.createElement("div")
   const iconDeleteBtn=document.createElement("i");
   iconDeleteBtn.classList.add("fas")
   iconDeleteBtn.classList.add("fa-times")
   deleteButton.classList.add("deleteBtn")
-  deleteButton.addEventListener("click", ()=>{deleteBook(cardContainer)})
+  deleteButton.addEventListener("click", ()=>{
+    removeChild(cardContainer)
+  })
   deleteButton.appendChild(iconDeleteBtn);
   cardContainer.appendChild(deleteButton);   
   const title=document.createElement("div")
@@ -124,11 +128,22 @@ function printValues(array,i){
   const status=document.createElement("div")
   status.innerHTML=array[i].status;
   status.classList.add("new-status");
+  status.id = `bookStatus${i}`
+  status.addEventListener("click",statusChange)
   cardContainer.appendChild(status);  
 return cardContainer;
+function statusChange(){
+  let status=document.getElementById(`bookStatus${i}`);
+  console.log(status.innerHTML)
+  if (status.innerHTML=="Read") status.innerHTML = "Unread";
+    else status.innerHTML = "Read";
+ // Si cambias el estado del libro cuando agregar uno con el estado contrario, todos se vuelven al nuevo
+    // Checar si al momento de crear un libro no estamos modificando el estado de todos los otros libros
+    // Si el status tiene el valor original, no se ve afectado. Cambia sólo si se cambio el status manualmente.
+}
 };
 
-function deleteBook(container){
+function removeChild(container){
   let index= container.dataset.id;
   myLibrary.splice(index,1)
   console.log(myLibrary)
