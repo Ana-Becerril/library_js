@@ -1,9 +1,13 @@
 
-const form = document.getElementById("form");
-
 let newBook;
-
-let myLibrary = [];
+let myLibrary;
+if(!localStorage.getItem('library')){
+  myLibrary=[];
+  localStorage.setItem('library', JSON.stringify(myLibrary));
+}else{
+  JSON.parse(localStorage.getItem('library'))
+}
+const form = document.getElementById("form");
 const mainContainer = document.getElementById("libraryStore")
 
 //función del constructor y marcación de error para cuando no hay input
@@ -11,9 +15,8 @@ function Book( title, author, pages, status) {
     this.title=title;
     this.author=author;
     this.pages=pages;
-    this.status=status;
-    
-    if (!title) throw new Error('Please give the book a title.');
+    this.status=status;    
+  if (!title) throw new Error('Please give the book a title.');
   if (!author) throw new Error('Please give the book an author.');
   if (!pages) throw new Error('Please give the book a page count.');
   if (!status) throw new Error('Please tell us if you have read this book?');
@@ -52,20 +55,17 @@ function test (){
     console.log(bookArr[0]);
   };
   
-
 //función para checar si el libro está o no leído
 function statusChecker(){
-if (document.getElementById("read").checked) {
+  if (document.getElementById("read").checked) {
     return "Read";
 
 } else if (document.getElementById("unread").checked) {
     return "Unread";
-
 }
 };
 
-
-//función para construir el nuevo libro
+//función para construisr el nuevo libro
 function bookBuilder(title, author, pages, status){
     if(newBook= new Book(title, author, pages, statusChecker(status))){
           return true;
@@ -84,8 +84,7 @@ var btnAdd=document.getElementById("add-button")
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "flex";
-  modalContent.classList.add("bounce-in-fwd")
-  
+  modalContent.classList.add("bounce-in-fwd") 
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -95,9 +94,7 @@ if (event.target == modal) {
   }
 }
 
-
 //Función para imprimir los nuevos valores en una "card"
-
 function printValues(array,i){
   const cardContainer=document.createElement("div")
   cardContainer.dataset.id==
@@ -145,7 +142,6 @@ function printValues(array,i){
   cardContainer.appendChild(status);  
 return cardContainer;
 };
-
 
 function removeChild(container){
   let index= container.dataset.id;
