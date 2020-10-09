@@ -35,7 +35,7 @@ function test (){
    bookBuilder(newTitle.value, newAuthor.value, newPages.value, statusChecker());
    modal.style.display = "none";
    myLibrary.push(newBook);
-   //estos valores regresan los valores del formulario en blando cuando ya fue enviado
+   localStorage.setItem('library',JSON.stringify(myLibrary))
    title.value="";
    author.value="";
    pages.value="";
@@ -45,10 +45,11 @@ function test (){
    //Loop para agregar una tarjeta por cada libro creado
 
   function render(){ mainContainer.innerHTML="";
-   for (let i = 0; i<myLibrary.length; i++) {
-    mainContainer.appendChild(printValues(myLibrary,i));
+  let bookArr=JSON.parse(localStorage.getItem('library'))
+  for (let i = 0; i<myLibrary.length; i++) {
+    mainContainer.appendChild(printValues(bookArr,i));
     }
-    console.log(myLibrary[0]);
+    console.log(bookArr[0]);
   };
   
 
@@ -129,6 +130,7 @@ function printValues(array,i){
   cardContainer.appendChild(pages);
 
   const status=document.createElement("div")
+  localStorage.setItem('library',JSON.stringify(myLibrary))
   status.innerHTML=array[i].status;
   status.classList.add("new-status");
   status.addEventListener("click", ()=>{
@@ -148,6 +150,9 @@ return cardContainer;
 function removeChild(container){
   let index= container.dataset.id;
   myLibrary.splice(index,1)
+  localStorage.setItem('library',JSON.stringify(myLibrary))
   console.log(myLibrary)
   render();
 };
+
+render();
