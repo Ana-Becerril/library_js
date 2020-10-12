@@ -1,11 +1,10 @@
 
 let newBook;
-let myLibrary;
+let myLibrary=[];
 if(!localStorage.getItem('library')){
-  myLibrary=[];
   localStorage.setItem('library', JSON.stringify(myLibrary));
 }else{
-  JSON.parse(localStorage.getItem('library'))
+ myLibrary=JSON.parse(localStorage.getItem('library'));
 }
 const form = document.getElementById("form");
 const mainContainer = document.getElementById("libraryStore")
@@ -35,7 +34,9 @@ let newStatus = document.getElementById("status");
 
 //funcion que construye un libro a partir de los valores proporcionados, desaparece el formulario e imprime los nuevos valores en una tarjeta
 function test (){
+  //myLibrary=localStorage.getItem('library');
    bookBuilder(newTitle.value, newAuthor.value, newPages.value, statusChecker());
+   console.log(typeof myLibrary)
    modal.style.display = "none";
    myLibrary.push(newBook);
    localStorage.setItem('library',JSON.stringify(myLibrary))
@@ -48,11 +49,12 @@ function test (){
    //Loop para agregar una tarjeta por cada libro creado
 
   function render(){ mainContainer.innerHTML="";
-  let bookArr=JSON.parse(localStorage.getItem('library'))
+  myLibrary=localStorage.getItem('library');
+  localStorage.setItem('library',JSON.stringify(myLibrary))
   for (let i = 0; i<myLibrary.length; i++) {
-    mainContainer.appendChild(printValues(bookArr,i));
+    mainContainer.appendChild(printValues(myLibrary,i));
     }
-    console.log(bookArr[0]);
+    console.log(myLibrary[0]);
   };
   
 //función para checar si el libro está o no leído
@@ -145,10 +147,10 @@ return cardContainer;
 
 function removeChild(container){
   let index= container.dataset.id;
-  myLibrary.splice(index,1)
   localStorage.setItem('library',JSON.stringify(myLibrary))
+  myLibrary.splice(index,1)
   console.log(myLibrary)
   render();
 };
 
-render();
+//render(); checar como está funcionando render y porque render no está funcionando como debería
