@@ -1,10 +1,16 @@
 
 let newBook;
 let myLibrary=[];
-if(!localStorage.getItem('library')){
-  localStorage.setItem('library', JSON.stringify(myLibrary));
+
+storageRetriver();
+
+function storageRetriver(){
+if(localStorage.getItem('library')){
+  myLibrary=JSON.parse(localStorage.getItem("library"));
+  console.log(myLibrary)
 }else{
- myLibrary=JSON.parse(localStorage.getItem('library'));
+  console.log("Add your first book")
+}
 }
 const form = document.getElementById("form");
 const mainContainer = document.getElementById("libraryStore")
@@ -34,9 +40,7 @@ let newStatus = document.getElementById("status");
 
 //funcion que construye un libro a partir de los valores proporcionados, desaparece el formulario e imprime los nuevos valores en una tarjeta
 function test (){
-  //myLibrary=localStorage.getItem('library');
    bookBuilder(newTitle.value, newAuthor.value, newPages.value, statusChecker());
-   console.log(typeof myLibrary)
    modal.style.display = "none";
    myLibrary.push(newBook);
    localStorage.setItem('library',JSON.stringify(myLibrary))
@@ -49,8 +53,6 @@ function test (){
    //Loop para agregar una tarjeta por cada libro creado
 
   function render(){ mainContainer.innerHTML="";
-  myLibrary=localStorage.getItem('library');
-  localStorage.setItem('library',JSON.stringify(myLibrary))
   for (let i = 0; i<myLibrary.length; i++) {
     mainContainer.appendChild(printValues(myLibrary,i));
     }
@@ -153,4 +155,6 @@ function removeChild(container){
   render();
 };
 
-//render(); checar como está funcionando render y porque render no está funcionando como debería
+render();
+
+//modificar la función que cambia el estado y que remueve libros
