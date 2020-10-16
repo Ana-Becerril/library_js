@@ -101,7 +101,7 @@ if (event.target == modal) {
 //Función para imprimir los nuevos valores en una "card"
 function printValues(array,i){
   const cardContainer=document.createElement("div")
-  cardContainer.dataset.id==i;
+  cardContainer.dataset.id=i;
   cardContainer.classList.add("bookDiv");
 
   const deleteButton=document.createElement("div")
