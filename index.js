@@ -101,7 +101,7 @@ if (event.target == modal) {
 //Función para imprimir los nuevos valores en una "card"
 function printValues(array,i){
   const cardContainer=document.createElement("div")
-  cardContainer.dataset.id==
+  cardContainer.dataset.id==i;
   cardContainer.classList.add("bookDiv");
 
   const deleteButton=document.createElement("div")
@@ -131,7 +131,6 @@ function printValues(array,i){
   cardContainer.appendChild(pages);
 
   const status=document.createElement("div")
-  localStorage.setItem('library',JSON.stringify(myLibrary))
   status.innerHTML=array[i].status;
   status.classList.add("new-status");
   status.addEventListener("click", ()=>{
@@ -142,6 +141,7 @@ function printValues(array,i){
       myLibrary[i].status="Read"
       status.textContent="Read"
     }
+    localStorage.setItem('library',JSON.stringify(myLibrary))
   })
   cardContainer.appendChild(status);  
 return cardContainer;
@@ -149,12 +149,13 @@ return cardContainer;
 
 function removeChild(container){
   let index= container.dataset.id;
-  localStorage.setItem('library',JSON.stringify(myLibrary))
   myLibrary.splice(index,1)
   console.log(myLibrary)
+  localStorage.setItem('library',JSON.stringify(myLibrary))
   render();
 };
 
 render();
 
-//modificar la función que cambia el estado y que remueve libros
+//modificar la función que remueve libros
+
