@@ -135,10 +135,6 @@ body {
 .main-view{
   width: 100%;
   height: 100%;
-  background-image: url("../images/background-form.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
 }
 
 h1{
@@ -146,7 +142,7 @@ h1{
   bottom: 72%;
   left: 37%;
   font-family: 'Zilla Slab', serif;
-  color: rgb(243, 243, 201);
+  color: rgb(153, 246, 211);
   font-size: 80px;
   text-align: center;
   z-index: 2;
@@ -271,8 +267,7 @@ input[type="radio"] {
 .bookDiv{
         position: relative;
   display: flex;
-  background-color:  rgba(233, 233, 183, 0.3);
-  border: 6px dotted rgb(243, 243, 201);
+  border: 6px solid rgb(243, 243, 201);
   width: 200px;
   z-index: 1;
   top:30%;
