@@ -139,6 +139,10 @@ body {
 .main-view{
   width: 100%;
   height: 100%;
+  background-image: url("../images/background-library.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 h1{
@@ -146,7 +150,7 @@ h1{
   bottom: 72%;
   left: 37%;
   font-family: 'Zilla Slab', serif;
-  color: rgb(153, 246, 211);
+  color: rgb(137, 197, 204);
   font-size: 80px;
   text-align: center;
   z-index: 2;
