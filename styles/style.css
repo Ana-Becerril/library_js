@@ -275,7 +275,7 @@ input[type="radio"] {
 .bookDiv{
         position: relative;
   display: flex;
-  border: 6px solid rgb(243, 243, 201);
+  border: 2px solid rgb(175, 185, 197);
   width: 200px;
   z-index: 1;
   top:30%;
@@ -290,7 +290,6 @@ color:rgb(93, 93, 93);
 }
 
 .new-title, .new-author, .new-pages{
- background-color: rgb(229, 186, 229);
  text-align: center;
  margin-bottom: 5px;
 }
