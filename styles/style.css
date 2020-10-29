@@ -147,7 +147,7 @@ body {
 
 h1{
   position: absolute;
-  bottom: 72%;
+  bottom: 82%;
   left: 37%;
   font-family: 'Zilla Slab', serif;
   color: rgb(137, 197, 204);
@@ -159,7 +159,7 @@ h1{
 button{
   background-color: gainsboro;
   position: absolute;
-  bottom: 76%;
+  bottom: 77%;
   left: 47%;
   font-family: 'Zilla Slab', serif;
   color: rgb(124, 124, 113);
@@ -202,11 +202,11 @@ button:hover{
 .modal-content {
     width: 355px;
     height: 391px;
-    border: 3px solid rgb(243, 243, 201);
+    border: 3px solid rgb(137, 197, 204);;
     z-index: 1;
     text-align: center;
     font-family: 'Zilla Slab', serif;
-    color: rgb(243, 243, 201);
+    color: rgb(224, 224, 224);
     font-size: 33px;
     align-items: center;
     justify-content: center;
@@ -214,12 +214,12 @@ button:hover{
 }
 
 form > input{
-  border-radius: 10px;
+  border-radius: 5px;
   font-family: 'Zilla Slab', serif;
-height: 25px;
+height: 38px;
 font-size: large;
 background-color: gainsboro;
-border:rgb(243, 243, 201) solid 2px;
+border:rgb(137, 197, 204) solid 2px;
 outline-color: rgb(179, 179, 179) ;
 color: rgb(124, 124, 113);
 z-index: 3;
@@ -231,8 +231,8 @@ z-index: 3;
     position: absolute;
     display: flex;
     justify-content: space-evenly;
-    left: 1%;
-    top: 66%;
+    left: 7%;
+    top: 75%;
 }
 
 input[type="radio"] {
@@ -243,7 +243,7 @@ input[type="radio"] {
 #add-button{
   background-color: gainsboro;
     position: absolute;
-    bottom: 7%;
+    bottom: 1%;
     left: 44%;
     font-family: 'Zilla Slab', serif;
     color: rgb(124, 124, 113);
@@ -252,7 +252,7 @@ input[type="radio"] {
     z-index: 2;
     border-radius: 45px;
     border-style: none;
-    padding: 7px;
+    padding: 6px;
     border-bottom: 4px solid rgb(153, 153, 153);
 }
 
