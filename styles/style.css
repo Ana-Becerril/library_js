@@ -339,9 +339,10 @@ top:117px;
 .library-store{
         margin-top: 4px;
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
-        padding: 0 0 0 19px;
         background-color: transparent;
+        width: 100%;
 }
 
 @media screen and (min-width:769px) and (max-width: 1024px) {
@@ -358,10 +359,16 @@ top:117px;
         }
       }
 
+.library-store-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+}
+
 @media screen and (min-width:507px) and (max-width: 768px) {
         .library-store{
                 margin-top: 4px;
-                align-content: center;
                 flex-wrap: wrap;
 
         }
@@ -374,7 +381,8 @@ top:117px;
 @media screen and (max-width: 506px) {
         .library-store{
                 flex-direction: column;
-                align-content: center;
+                align-items: center;
+                justify-content: center;
                 padding: 0;
                 margin-top: 4px;
         }
