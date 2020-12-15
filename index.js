@@ -157,5 +157,3 @@ function removeChild(container){
 
 render();
 
-//modificar la función que remueve libros
-

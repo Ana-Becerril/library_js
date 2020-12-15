@@ -1,8 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   width: 100%;
   height: 100%;
   margin:0;
+  background-image: url("../images/background-library.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* ----------------------------------------------
@@ -134,29 +142,34 @@ body {
 
 .main-view{
   width: 100%;
-  height: 100%;
-  background-image: url("../images/background-form.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+height: 100vh;
+}
+
+.title{
+        width: 100%;
+height: 100px;
+        display: flex;
+        justify-content: center;
+
 }
 
 h1{
-  position: absolute;
-  bottom: 72%;
-  left: 37%;
-  font-family: 'Zilla Slab', serif;
-  color: rgb(243, 243, 201);
-  font-size: 80px;
-  text-align: center;
-  z-index: 2;
+        font-family: 'Zilla Slab', serif;
+        color: rgb(137, 197, 204);
+        font-size: 80px;
+        z-index: 2;
+}
+
+.button-container{
+        display: flex;
+        justify-content: center;
+        width: 100%;
 }
 
 button{
   background-color: gainsboro;
-  position: absolute;
-  bottom: 76%;
-  left: 47%;
+  width: 96px;
+  height: 41px;
   font-family: 'Zilla Slab', serif;
   color: rgb(124, 124, 113);
   font-size: 18px;
@@ -198,11 +211,11 @@ button:hover{
 .modal-content {
     width: 355px;
     height: 391px;
-    border: 3px solid rgb(243, 243, 201);
+    border: 3px solid rgb(137, 197, 204);;
     z-index: 1;
     text-align: center;
     font-family: 'Zilla Slab', serif;
-    color: rgb(243, 243, 201);
+    color: rgb(224, 224, 224);
     font-size: 33px;
     align-items: center;
     justify-content: center;
@@ -210,12 +223,12 @@ button:hover{
 }
 
 form > input{
-  border-radius: 10px;
+  border-radius: 5px;
   font-family: 'Zilla Slab', serif;
-height: 25px;
+height: 38px;
 font-size: large;
 background-color: gainsboro;
-border:rgb(243, 243, 201) solid 2px;
+border:rgb(137, 197, 204) solid 2px;
 outline-color: rgb(179, 179, 179) ;
 color: rgb(124, 124, 113);
 z-index: 3;
@@ -227,8 +240,8 @@ z-index: 3;
     position: absolute;
     display: flex;
     justify-content: space-evenly;
-    left: 1%;
-    top: 66%;
+    left: 7%;
+    top: 75%;
 }
 
 input[type="radio"] {
@@ -239,7 +252,7 @@ input[type="radio"] {
 #add-button{
   background-color: gainsboro;
     position: absolute;
-    bottom: 7%;
+    bottom: 1%;
     left: 44%;
     font-family: 'Zilla Slab', serif;
     color: rgb(124, 124, 113);
@@ -248,12 +261,12 @@ input[type="radio"] {
     z-index: 2;
     border-radius: 45px;
     border-style: none;
-    padding: 7px;
+    padding: 6px;
     border-bottom: 4px solid rgb(153, 153, 153);
 }
 
 #add-button:hover{
-  background-color: rgb(199, 255, 216);
+  background-color: rgb(209, 226, 214);
   border-bottom: 1px solid rgb(153, 153, 153);
   color: rgb(124, 124, 113);
 
@@ -262,21 +275,14 @@ input[type="radio"] {
 
 /*Aquí empieza la estilización de library_store*/
 
-#libraryStore{
-        margin-top: 170px;
-        position: absolute;
-        display: flex;
-}
-
 .bookDiv{
         position: relative;
   display: flex;
-  background-color:  rgba(233, 233, 183, 0.3);
-  border: 6px dotted rgb(243, 243, 201);
+  border: 2px solid rgb(175, 185, 197);
   width: 200px;
   z-index: 1;
   top:30%;
-  margin: 0 10px 0 10px;
+  margin: 10px 10px 0 10px;
   justify-content: space-evenly;
   align-items: center;
   flex-direction:column;
@@ -284,10 +290,10 @@ font-size: 20px;
 font-family: 'Zilla Slab', serif;
 border-radius: 25px;
 color:rgb(93, 93, 93);
+background-color: transparent;
 }
 
 .new-title, .new-author, .new-pages{
- background-color: rgb(229, 186, 229);
  text-align: center;
  margin-bottom: 5px;
 }
@@ -309,7 +315,7 @@ width: 30px;
 text-align: center;
 border-radius: 50%;
 background-color: gainsboro;
-border-bottom: 4px solid rgb(153, 153, 153);
+border-bottom: 1px solid rgb(153, 153, 153);
 margin: 5px 0 3px 0;
 }
 
@@ -320,12 +326,86 @@ margin: 5px 0 3px 0;
       }
 
 .new-status{
- width: 60px;
- height: 26px;
+ width: 65px;
+ height: 30px;
  text-align: center;
  border-radius: 13%;
  background-color: gainsboro;
 border-bottom: 4px solid rgb(153, 153, 153);
-margin: 5px 0 3px 0;
+margin: 5px 0 7px 0;
 top:117px;
 }
+
+.library-store{
+        margin-top: 4px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: transparent;
+        width: 100%;
+}
+
+@media screen and (min-width:769px) and (max-width: 1024px) {
+        .library-store{
+                margin-top: 4px;
+                align-content: center;
+                flex-wrap: wrap;
+
+
+        }
+        .bookDiv{
+                width: 224px;
+                font-size: 22px;
+        }
+      }
+
+.library-store-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+}
+
+@media screen and (min-width:507px) and (max-width: 768px) {
+        .library-store{
+                margin-top: 4px;
+                flex-wrap: wrap;
+
+        }
+        .bookDiv{
+                width: 224px;
+                font-size: 22px;
+        }
+      }
+
+@media screen and (max-width: 506px) {
+        .library-store{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                margin-top: 4px;
+        }
+        .bookDiv{
+                width: 295px;
+                font-size: 22px;
+        }
+
+        h1{
+                font-size: 68px;
+        }
+
+        button {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-size: 18px;
+
+        }     
+        
+        .new-status {
+                width: 80px;
+                font-size: large;
+        }
+      }
+
