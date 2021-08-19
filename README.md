@@ -35,7 +35,7 @@ The premise of this project is to use vanilla Javascript to create a Book Librar
 4. Go the the project root and type ``` yarn/npm run start ```
 
 ## 🚀 Live version
-[visit the page](https://virtual-drummer.netlify.app/)
+[visit the page](https://bookmate-library.netlify.app/)
 
 
 ## 🧫🔬 Testing
